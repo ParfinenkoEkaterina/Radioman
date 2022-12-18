@@ -43,6 +43,30 @@ public class RadioTest {
     }
 
     @Test
+    public void shouldToSetMaxStation() {
+        Radio radio = new Radio();
+
+        radio.setCurrentRadioStation(9);
+
+        int expected = 9;
+        int actual = radio.currentRadioStation;
+
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldToSetMinStation() {
+        Radio radio = new Radio();
+
+        radio.setToMinStation();
+
+        int expected = 0;
+        int actual = radio.currentRadioStation;
+
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
     public void shouldSetSoundVolume() {
         Radio radio = new Radio();
 
