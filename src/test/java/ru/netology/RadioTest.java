@@ -67,6 +67,18 @@ public class RadioTest {
     }
 
     @Test
+    public void shouldSetToMinSound() {
+        Radio radio = new Radio();
+
+        radio.setToMinSound();
+
+        int expected = 0;
+        int actual = radio.currentSoundVolume;
+
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
     public void shouldIncreaseVolume() {
         Radio radio = new Radio();
 

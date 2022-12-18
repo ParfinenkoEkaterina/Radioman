@@ -40,6 +40,10 @@ public class Radio {
         currentSoundVolume = 10;
     }
 
+    public void setToMinSound() {
+        currentSoundVolume = 0;
+    }
+
     public void increaseVolume() {
         if (currentSoundVolume < 10) {
             currentSoundVolume = currentSoundVolume + 1;
