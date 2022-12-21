@@ -2,82 +2,50 @@ package ru.netology;
 
 public class Radio {
 
-    public int currentRadioStation;
+    private int currentRadioStation;
+    private int currentVolume;
 
-    public int nextRadioStation(int[] station) {
-        int currentStation = currentRadioStation;
-        for (int i = 0; i < station.length; i++) {
-            if (station[i] < station[currentStation]) {
-                currentStation = i;
-            }
+    public void next() {
+        if (currentRadioStation != 9) {
+            currentRadioStation++;
+        } else {
+           currentRadioStation = 0;
         }
-        return currentStation;
     }
 
-    public int prevRadioStation(int[] station) {
-        int currentStation = 0;
-        for (int i = 0; i < station.length; i++) {
-            if (station[i] > station[currentStation]) {
-                currentStation = i;
-            }
-        }
-        return currentStation;
+    public int getCurrentRadioStation() {
+        return currentRadioStation;
     }
 
-    public void setToMaxStation(int newCurrentRadioStation) {
-        currentRadioStation = 9;
-    }
-
-    public void setToMinStation() {
-        currentRadioStation = 0;
-    }
-
-    public void setCurrentRadioStation(int newCurrentRadioStation) {
-        if (newCurrentRadioStation < 0) {
+    public void setCurrentRadioStation(int currentRadioStation) {
+        if (currentRadioStation < 0) {
             return;
         }
-        if (newCurrentRadioStation > 9) {
+        if (currentRadioStation > 9) {
             return;
         }
-        currentRadioStation = newCurrentRadioStation;
+        this.currentRadioStation = currentRadioStation;
     }
 
-    public int currentSoundVolume;
-
-    public void setToMaxSound() {
-        currentSoundVolume = 10;
-    }
-
-    public void setToMinSound() {
-        currentSoundVolume = 0;
-    }
-
-    public void increaseVolume() {
-        if (currentSoundVolume < 10) {
-            currentSoundVolume = currentSoundVolume + 1;
+    public void nextCurrentVolume() {
+        if (currentVolume != 10) {
+            currentVolume++;
+        } else {
+            currentVolume = 0;
         }
     }
 
-    public void decreaseVolume() {
-        if (currentSoundVolume < 0) {
-            currentSoundVolume = currentSoundVolume + 1;
-        }
+    public int getCurrentVolume() {
+        return currentVolume;
     }
 
-    public void setCurrentSoundVolume(int newCurrentSoundVolume) {
-        if (newCurrentSoundVolume < 0) {
+    public void setCurrentVolume(int currentVolume) {
+        if (currentVolume < 0) {
             return;
         }
-        if (newCurrentSoundVolume > 10) {
+        if (currentVolume > 10) {
             return;
         }
-        currentSoundVolume = newCurrentSoundVolume;
+        this.currentVolume = currentVolume;
     }
-
-
-
-
-
-
-
 }
