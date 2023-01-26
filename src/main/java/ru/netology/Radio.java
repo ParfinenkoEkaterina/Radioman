@@ -56,11 +56,6 @@ public class Radio {
 
 
 
-    public void Volume(int volumeCount) {
-        maxVolume = volumeCount - 1;
-    }
-
-
     public void nextCurrentVolume() {
         if (currentVolume != maxVolume) {
             currentVolume++;
